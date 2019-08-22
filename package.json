@@ -2,10 +2,14 @@
   "name": "test",
   "version": "0.1.0",
   "private": true,
+  "repository": {
+    "type": "git",
+    "url": "git@github.com:gaoyakang/TODOList.git"
+  },
   "scripts": {
     "serve": "vue-cli-service serve",
     "build": "vue-cli-service build",
-    "test:unit": "vue-cli-service test:unit"
+    "test:unit": "vue-cli-service test:unit --watch"
   },
   "dependencies": {
     "vue": "^2.6.10"

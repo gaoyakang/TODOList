@@ -1,10 +1,15 @@
 <template>
-  <div>
+  <div class="header">
+  <div class="header-content">
+    TODOLIST
     <input
       data-test="input"
       v-model="inputValue"
-	  @keyup.enter="addTodoItem"
+      @keyup.enter="addTodoItem"
+      class="header-input"
+      placeholder="您要干点嘛啊-~~~"
     />
+  </div>
   </div>
 </template>
 
@@ -17,7 +22,7 @@ export default {
     }
   },
   methods: {
-    addTodoItem () {
+    addTodoItem (inputValue) {
       if (this.inputValue) {
         this.$emit('add', this.inputValue)
         this.inputValue =''
@@ -27,4 +32,24 @@ export default {
 }
 </script>
 
-<style scoped lang="stylus"></style>
+<style scoped lang="stylus">
+  .header {
+    line-height: 60px;
+    background: #333;
+  }
+  .header-content {
+    width: 600px;
+    margin: 0 auto;
+    color: #fff;
+    font-size: 24px;;
+  }
+  .header-input {
+    float: right;
+    width: 360px;
+    margin-top: 16px
+    line-height: 24px;
+    outline: none;
+    color: #333;
+    text-indent: 10px;
+  }
+</style>

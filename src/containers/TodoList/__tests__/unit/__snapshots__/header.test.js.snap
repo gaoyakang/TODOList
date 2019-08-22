@@ -1,0 +1,9 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Header.vue header样式发生改变时给出提示 1`] = `
+<div class="header">
+  <div class="header-content">
+    TODOLIST
+    <input data-test="input" placeholder="您要干点嘛啊-~~~" class="header-input"></div>
+</div>
+`;

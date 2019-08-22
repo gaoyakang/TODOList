@@ -1,0 +1,90 @@
+<template>
+  <div class="undolist-wraper">
+    <div class="undolist">
+      <div class="title">
+      正在进行<span data-test="count" class="count">{{list.length}}</span>
+    </div>
+    <ul class="list">
+      <li
+        v-for="(item,index) in list"
+        :key="index"
+        data-test="item"
+        class="item"
+      >
+        {{item}}
+        <span
+          data-test="delete-button"
+          @click="() => { handleDelete(index) }"
+          class="delete"
+        >-</span>
+      </li>
+    </ul>
+    </div>
+  </div>
+</template>
+
+<script>
+export default {
+  name: 'UndoList',
+  props: ['list'],
+  methods: {
+    handleDelete (index) {
+      this.$emit('delete',index)
+    }
+  }
+}
+</script>
+
+<style scoped lang="stylus">
+.undolist {
+  width: 600px;
+  margin: 0 auto;
+}
+.title {
+  margin: 10px 0;
+  line-height: 30px;
+  font-size: 24px;
+  font-weight: bold;
+}
+.count {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #e6e6e6;
+  border-radius: 10px;
+  color: #000;
+  margin-top: 5px;
+  font-size: 12px;  
+}
+.list {
+  list-style-type: none;
+}
+.item {
+  line-height: 32px;
+  font-size: 14px;
+  background: #fff;
+  border-left: 5px solid #629a9a;
+  border-radius: 3px;
+  margin-bottom: 10px;
+  text-indent: 10px;
+}
+.delete {
+  float: right;
+  display: block;
+  width: 20px;
+  height: 20px;
+  line-height: 20px;
+  text-align: center;
+  background: #e6e6e6;
+  border-radius: 10px;
+  color: #000;
+  margin-top: 5px;
+  font-size: 12px;
+  text-indent: 0;
+  margin-right: 10px;
+  cursor: pointer;
+}
+</style>

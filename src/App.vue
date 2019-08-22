@@ -1,6 +1,6 @@
 <template>
   <div id="app">
-	<TodoList />
+	  <TodoList />
   </div>
 </template>
 
@@ -18,5 +18,6 @@ export default {
   * {
     margin: 0;
     padding: 0;
+    background: #cdcdcd;
   }
 </style>
